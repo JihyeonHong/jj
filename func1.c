@@ -11,11 +11,18 @@ void func1()
 		num[i]=rand()%11;
 	}
 
-	int op[4]; int temp;
+	char op[4]; int temp;
 	for(int i=0; i<4; i++)
 	{
-		op[i]=rand()%4;
+		op[i]=(rand()%4)+43;
 	}
 
+	int result;
+
+
+	result=num[0]op[0]num[1]
+
+
+	printf("%d %c %d %c %d = %d\n",num[0], op[0], num[1], op[1], num[2], result);
 	
 }
