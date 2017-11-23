@@ -24,5 +24,5 @@ void func1()
 
 
 	printf("%d %c %d %c %d = %d\n",num[0], op[0], num[1], op[1], num[2], result);
-	
+
 }
