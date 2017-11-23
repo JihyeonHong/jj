@@ -23,6 +23,6 @@ void func1()
 	result=num[0]op[0]num[1]
 
 
-	printf("%d %c %d %c %d = %d\n",num[0], op[0], num[1], op[1], num[2], result);
+	printf("%d fff %c %d %c %d = %d\n",num[0], op[0], num[1], op[1], num[2], result);
 	
 }
