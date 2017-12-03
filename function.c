@@ -39,7 +39,7 @@ int main()
 			printf("/ ", array2[b++]);
 	}
 
-	printf("\n");
+	//printf("\n");
 
 
 	for (int h = 0; h < stage; h++)
@@ -67,7 +67,10 @@ int main()
 			else if (array2[i] == DIVIDE)
 			{
 				if ((array1[i] < array1[i + 1]) || (array1[i] % array1[i + 1] != 0))
+				{
+					printf("\n");
 					return 0;
+				}
 
 				array1[i] = array1[i] / array1[i + 1];
 				for (int j = i + 1; j < num_stage; j++)
@@ -85,10 +88,10 @@ int main()
 
 	}
 
-	printf("\n");
+//	printf("\n");
 
 
-	a = 0, b = 0;
+/*	a = 0, b = 0;
 	for (int i = 0; i < num_stage + op_stage; i++)//print
 	{
 		if (i % 2 == 0)
@@ -102,7 +105,7 @@ int main()
 		else if (array2[b] == DIVIDE)
 			printf("/ ", array2[b++]);
 	}
-
+*/
 	///////////  + -
 	for (int h = 0; h < stage-count; h++)
 	{
@@ -142,7 +145,7 @@ int main()
 
 	}
 
-	printf("\n");
+	printf("= ");
 
 
 	a = 0, b = 0;
@@ -159,5 +162,7 @@ int main()
 		else if (array2[b] == DIVIDE)
 			printf("/ ", array2[b++]);
 	}
+
+	printf("\n");
 }
 
