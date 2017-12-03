@@ -6,10 +6,11 @@
 #define MINUS 1001
 #define MULTI 1002
 #define DIVIDE 1003
+#define stage 2
 
-void func1(int stage)
+void main()
 {
-	srand(time(NUMLL)); //random_number
+	srand(time(NULL)); //random_number
 	
 	int num=stage*2+3;
 	int *array = (int*)malloc(num*sizeof(int));
@@ -35,6 +36,8 @@ void func1(int stage)
 			printf("- ", array[i]);
 		else if(array[i]==DIVIDE)
 			printf("/ ", array[i]);
+		else if(array[i]==MULTI)
+			printf("x ", array[i]);
 		else
 			printf("%d ", array[i]);
 
