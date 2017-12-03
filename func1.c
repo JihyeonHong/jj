@@ -4,17 +4,20 @@
 void func1(int stage)
 {
 	srand(time(NUMLL)); //random_number
-	//malloc 2*number+3
-	int num[20];
-	for(int i=0; i<stage; i++)//number
-	{
-		num[i]=rand()%11;
-	}
+	
+	int num=stage*2+3;
+	int array = (int)malloc(num*sizeof(int))
 
-	char op[4]; int temp;
-	for(int i=0; i<4; i++)//operation
+	for(int i=0; i<num; i++)//number
 	{
-		op[i]=(rand()%4)+43;
+		if(i%2==0)//even number(number)
+		{
+			
+		}
+		else
+		{
+		
+		}
 	}
 
 	int result;
