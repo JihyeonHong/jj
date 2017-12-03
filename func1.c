@@ -14,7 +14,7 @@ void func1(int stage)
 	int num=stage*2+3;
 	int *array = (int*)malloc(num*sizeof(int));
 
-	for(int i=0; i<num; i++)//number
+	for(int i=0; i<num-1; i++)//number
 	{
 		if(i%2==0)//even number(number)
 		{
@@ -25,11 +25,19 @@ void func1(int stage)
 			array[i] = rand()%4 + 1000;
 		}
 	}
-	
+	for (int i = 0; i< num-1; i++)
+	{
+		if(i==num-2)
+			printf("= ",array[i]);
+		else if(array[i]==PLUS)
+			printf("+ ", array[i]);
+		else if(array[i]==MINUS)
+			printf("- ", array[i]);
+		else if(array[i]==DIVIDE)
+			printf("/ ", array[i]);
+		else
+			printf("%d ", array[i]);
 
-	int result;
-
-
-	printf("%d %c %d %c %d = %d\n",num[0], op[0], num[1], op[1], num[2], result);
+	}
 
 }
