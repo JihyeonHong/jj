@@ -12,11 +12,13 @@
 
 int verify()
 {
+	count = 0;
+
 	for (int h = 0; h < stage; h++)
 	{
 		for (int i = 0; i < or_op_stage; i++)
 		{
-			if (array2[i] == MULTI)
+			if (or_array2[i] == MULTI)
 			{
 				or_array1[i] = or_array1[i] * or_array1[i + 1];
 
@@ -78,7 +80,7 @@ int verify()
 				break;
 			}
 
-			else if (array2[i] == MINUS)
+			else if (or_array2[i] == MINUS)
 			{
 				or_array1[i] = or_array1[i] - or_array1[i + 1];
 				for (int j = i + 1; j < or_num_stage; j++)
