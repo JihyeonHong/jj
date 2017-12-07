@@ -1,6 +1,7 @@
 #include <time.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 #define PLUS 1000
 #define MINUS 1001
@@ -9,38 +10,31 @@
 
 #define stage 3
 
-int main()
-{
-	srand(time(NULL));
+int count = 0;
+int num_stage = stage + 1;
+int or_num_stage = stage + 1;
+int op_stage = stage;
+int or_op_stage = stage;
+int *array1 = (int*)malloc(num_stage * sizeof(int));
+int *array2 = (int*)malloc(op_stage * sizeof(int));
+int *or_array1 = (int*)malloc(num_stage * sizeof(int));
+int *or_array2 = (int*)malloc(op_stage * sizeof(int));
 
-	int count = 0;
-	int num_stage = stage + 1;
-	int op_stage = stage;
-	int *array1 = (int*)malloc(num_stage * sizeof(int));
-	int *array2 = (int*)malloc(op_stage * sizeof(int));
+int makeeq()
+{
+	num_stage = stage + 1;
+	op_stage = stage;
+	count = 0;
 
 	for (int i = 0; i < num_stage; i++)
 		array1[i] = rand() % 10 + 1;
 	for (int i = 0; i < op_stage; i++)
 		array2[i] = rand() % 4 + 1000;
 
-	int a = 0, b = 0;
-	for (int i = 0; i < num_stage + op_stage; i++)//print
-	{
-		if (i % 2 == 0)
-			printf("%d ", array1[a++]);
-		else if (array2[b] == PLUS)
-			printf("+ ", array2[b++]);
-		else if (array2[b] == MINUS)
-			printf("- ", array2[b++]);
-		else if (array2[b] == MULTI)
-			printf("* ", array2[b++]);
-		else if (array2[b] == DIVIDE)
-			printf("/ ", array2[b++]);
-	}
-
-	//printf("\n");
-
+	for (int i = 0; i < num_stage; i++)
+		or_array1[i] = array1[i];
+	for (int i = 0; i < op_stage; i++)
+		or_array2[i] = array2[i];
 
 	for (int h = 0; h < stage; h++)
 	{
@@ -68,8 +62,7 @@ int main()
 			{
 				if ((array1[i] < array1[i + 1]) || (array1[i] % array1[i + 1] != 0))
 				{
-					printf("\n");
-					return 0;
+					return -1;
 				}
 
 				array1[i] = array1[i] / array1[i + 1];
@@ -88,26 +81,7 @@ int main()
 
 	}
 
-//	printf("\n");
-
-
-/*	a = 0, b = 0;
-	for (int i = 0; i < num_stage + op_stage; i++)//print
-	{
-		if (i % 2 == 0)
-			printf("%d ", array1[a++]);
-		else if (array2[b] == PLUS)
-			printf("+ ", array2[b++]);
-		else if (array2[b] == MINUS)
-			printf("- ", array2[b++]);
-		else if (array2[b] == MULTI)
-			printf("* ", array2[b++]);
-		else if (array2[b] == DIVIDE)
-			printf("/ ", array2[b++]);
-	}
-*/
-	///////////  + -
-	for (int h = 0; h < stage-count; h++)
+	for (int h = 0; h < stage - count; h++)
 	{
 		for (int i = 0; i < op_stage; i++)
 		{
@@ -142,11 +116,7 @@ int main()
 				break;
 			}
 		}
-
 	}
 
-	printf("= %d\n", array[0]);
-
-
+	return array1[0];
 }
-
