@@ -1,16 +1,17 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
-#include <conio.h>
-#include <windows.h>
+//#include <conio.h>
+//#include <windows.h>
 
+/*
 void gotoxy(int x, int y)
 {
 	COORD Pos;
 	Pos.X = x;
 	Pos.Y = y;
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Pos);
-}
+}*/
 
 void quickSort(int x[], int L,int R)
 {
@@ -155,7 +156,7 @@ int main()
 	srand(time(NULL));
 	printf("Game 4 START\n\n");
 	int cnt = 3;
-	gotoxy(20, 1);
+	//gotoxy(20, 1);
 
 	printf("♥ ♥ ♥ \n");
 
@@ -163,14 +164,14 @@ int main()
 	{
 		game4();
 		cnt--;
-		if (cnt == 2)
+		/*if (cnt == 2)
 		{
 			gotoxy(20, 10);
 		}
 		if (cnt == 1)
 		{
 			gotoxy(20, 20);
-		}
+		}*/
 		for (int i = 0; i < cnt; i++)
 		{
 			printf("♥ ");
