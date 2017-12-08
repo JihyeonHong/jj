@@ -1,14 +1,5 @@
-#ifndef GAME1_H
-#define GAME1_H
-
-void game1();
-
-int stage;
-int result;
-int count=0;
-int num_stage;
-int or_num_stage;
-int or_opstage;
+#ifndef PRINT_H
+#define PRINT_H
 
 #define PLUS 43
 #define MINUS 45
@@ -27,7 +18,6 @@ int *array2;
 int *or_array1;
 int *or_array2;
 
-void game1();
-
+void print();
 
 #endif

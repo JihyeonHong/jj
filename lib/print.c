@@ -25,7 +25,7 @@ void print(int game_num)
 
 	else if (game_num == 2)
 	{
-		for (int i = 0; or_array1[i] != NULL; i++)
+		for (int i = 0; i < or_num_stage; i++)
 		{
 			or_array1[i] = '_';
 		}
@@ -49,7 +49,7 @@ void print(int game_num)
 
 	else if (game_num == 3)
 	{
-		for (int i = 0; or_array2[i] != NULL; i++)
+		for (int i = 0; i < or_op_stage; i++)
 		{
 			or_array2[i] = '_';
 		}
@@ -59,7 +59,7 @@ void print(int game_num)
 		{
 			if (i % 2 == 0)
 				printf("%d ", or_array1[a++]);
-			else 
+			else
 				printf("%c ", or_array2[b++]);
 		}
 		printf("= %d\n", array1[0]);
