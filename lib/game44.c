@@ -2,6 +2,15 @@
 #include <time.h>
 #include <stdlib.h>
 #include <conio.h>
+#include <windows.h>
+
+void gotoxy(int x, int y)
+{
+	COORD Pos;
+	Pos.X = x;
+	Pos.Y = y;
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Pos);
+}
 
 void quickSort(int x[], int L,int R)
 {
@@ -31,24 +40,39 @@ void quickSort(int x[], int L,int R)
 
 }
 
+/*
+int duplication(int i,int j, &array)
+{
+	for (int j = 0; j < i; j++)
+	{
+		if (array[i] == array[j])//중복검사
+		{
+			return 1;
+		}
+	}
+	return 0;
+}*/
+
 void game4()
 {
 	int array[9] = { 0 };
-
 	int array2[9] = { 0 };
+
 	for (int i = 0; i < 9; i++)
 	{
 		array[i] = rand() % 50;
+
 		for (int j = 0; j < i; j++)
 		{
-			if (array[i] == array[j])
+			if (array[i] == array[j])//중복검사
 			{
-
+				i--;
 			}
 		}
+
 		array2[i] = array[i];//copy
 
-		printf("%d ", array[i]);
+		printf("%3d ", array[i]);
 		if ((i+1) % 3 == 0)
 		{
 			printf("\n");
@@ -62,7 +86,7 @@ void game4()
 
 	for (int i = 0; i < 9; i++)
 	{
-		printf("%d ", array2[i]);
+		printf("%3d ", array2[i]);
 		if ((i + 1) % 3 == 0)
 		{
 			printf("\n");
@@ -129,5 +153,31 @@ void game4()
 int main()
 {
 	srand(time(NULL));
-	game4();
+	printf("Game 4 START\n\n");
+	int cnt = 3;
+	gotoxy(20, 1);
+
+	printf("♥ ♥ ♥ \n");
+
+	while (cnt > 0)
+	{
+		game4();
+		cnt--;
+		if (cnt == 2)
+		{
+			gotoxy(20, 10);
+		}
+		if (cnt == 1)
+		{
+			gotoxy(20, 20);
+		}
+		for (int i = 0; i < cnt; i++)
+		{
+			printf("♥ ");
+		}
+		printf("\n");
+	}
+
+	return 0;
+	
 }
