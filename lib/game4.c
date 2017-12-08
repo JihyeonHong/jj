@@ -1,3 +1,7 @@
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+
 void game4()
 {
 	int array[9] = { 0 };
@@ -14,7 +18,10 @@ void game4()
 						i--;
 					}
 				}
+	}
 
+	for (int i = 0; i < 9; i++)
+	{
 		array2[i] = array[i];//copy
 
 		printf("%d ", array[i]);
@@ -37,12 +44,11 @@ void game4()
 			printf("\n");
 		}
 	}
-
-
+	
 	int key = 0, num = 0;
 	for (int i = 0; i < 9; i++)
 	{
-		scanf("%c", &key);
+		scanf("%d", &key);
 		//key = getch();
 		if (key == 7)
 		{
@@ -80,6 +86,7 @@ void game4()
 		{
 			num = array[8];
 		}
+
 		if (num == array2[i])
 		{
 			printf("good ");
@@ -91,5 +98,4 @@ void game4()
 		}
 	}
 	printf("\n");
-
 }
