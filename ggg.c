@@ -201,6 +201,34 @@ int verify(int flag)
 	}
 }
 
+void quickSort(int x[], int L, int R)
+{
+	int i = L, j = R, tmp;
+	int pivot = x[(L + R) / 2];
+
+	while (i <= j)
+	{
+		while (x[i] < pivot)
+			i++;
+		while (x[j] > pivot)
+			j--;
+
+		if (i <= j)
+		{
+			tmp = x[i];
+			x[i] = x[j];
+			x[j] = tmp;
+			i++, j--;
+		}
+	}
+
+	if (L < j)
+		quickSort(x, L, j);
+	if (i < R)
+		quickSort(x, i, R);
+
+}
+
 int makeeq()
 {
 	num_stage = stage + 1;
@@ -320,6 +348,8 @@ void game1()
 
 	for (int i = 1; i <= 3; i++)
 	{
+		printf("\n<<<<<<<<<<<<<<<<<< Stage%d >>>>>>>>>>>>>>>>>>\n\n", i);
+
 		for (int j = 0; j < 3; j++)
 		{
 			testresult = makeeq();
@@ -350,6 +380,8 @@ void game2()
 
 	for (int i = 1; i <= 3; i++)
 	{
+		printf("\n<<<<<<<<<<<<<<<<<< Stage%d >>>>>>>>>>>>>>>>>>\n\n", i);
+
 		for (int j = 0; j < 3; j++)
 		{
 			testresult = makeeq();
@@ -388,6 +420,8 @@ void game3()
 
 	for (int i = 1; i <= 3; i++)
 	{
+		printf("\n<<<<<<<<<<<<<<<<<< Stage%d >>>>>>>>>>>>>>>>>>\n\n", i);
+
 		for (int j = 0; j < 3; j++)
 		{
 			testresult = makeeq();
@@ -417,6 +451,95 @@ void game3()
 	}
 }
 
+void game4()
+{
+	printf("\n");
+
+	int array[9] = { 0 };
+	int array2[9] = { 0 };
+
+	for (int i = 0; i < 9; i++)
+	{
+		array[i] = rand() % 50;
+
+		for (int j = 0; j < i; j++)
+		{
+			if (array[i] == array[j])//중복검사
+			{
+				i--;
+			}
+		}
+	}
+
+	for (int i = 0; i < 9; i++)
+	{
+		array2[i] = array[i];//copy
+
+		printf("%d ", array[i]);
+		if ((i + 1) % 3 == 0)
+		{
+			printf("\n");
+		}
+	}
+
+	printf("\n");
+	//sorting 
+
+	quickSort(array2, 0, 8);
+
+	int key = 0, num = 0;
+	for (int i = 0; i < 9; i++)
+	{
+		scanf("%d", &key);
+		//key = getch();
+		if (key == 7)
+		{
+			num = array[0];
+		}
+		if (key == 8)
+		{
+			num = array[1];
+		}
+		if (key == 9)
+		{
+			num = array[2];
+		}
+		if (key == 4)
+		{
+			num = array[3];
+		}
+		if (key == 5)
+		{
+			num = array[4];
+		}
+		if (key == 6)
+		{
+			num = array[5];
+		}
+		if (key == 1)
+		{
+			num = array[6];
+		}
+		if (key == 2)
+		{
+			num = array[7];
+		}
+		if (key == 3)
+		{
+			num = array[8];
+		}
+
+
+
+		if (num != array2[i])
+		{
+			printf("Fail\n\n");
+			break;
+		}
+	}
+	printf("\n");
+}
+
 int main()
 {
 	srand(time(NULL));
@@ -430,14 +553,14 @@ int main()
 
 	if (gamenum == 1)
 		game1();
-	
+
 	else if (gamenum == 2)
 		game2();
-	
+
 	else if (gamenum == 3)
 		game3();
 
-//	else 
-//		game4();
+	else 
+		game4();
 
 }

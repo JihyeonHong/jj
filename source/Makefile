@@ -8,3 +8,4 @@ main.o: main.c
 
 clean:
 	rm main.o main
+
