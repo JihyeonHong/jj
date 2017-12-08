@@ -1,15 +1,6 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
-/*
-void gotoxy(int x, int y)
-{
-	COORD Pos;
-	Pos.X = x;
-	Pos.Y = y;
-	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Pos);
-}*/
-
 
 void quickSort(int x[], int L, int R)
 {
@@ -139,35 +130,5 @@ void game4()
 int main()
 {
 	srand(time(NULL));
-<<<<<<< HEAD:lib/game44.c
-	printf("Game 4 START\n\n");
-	int cnt = 3;
-	//gotoxy(20, 1);
-
-	printf("♥ ♥ ♥ \n");
-
-	while (cnt > 0)
-	{
-		game4();
-		cnt--;
-		/*if (cnt == 2)
-		{
-			gotoxy(20, 10);
-		}
-		if (cnt == 1)
-		{
-			gotoxy(20, 20);
-		}*/
-		for (int i = 0; i < cnt; i++)
-		{
-			printf("♥ ");
-		}
-		printf("\n");
-	}
-
-	return 0;
-	
-=======
 	game4();
->>>>>>> 9320795476772a39592213d372ae6211fae46924:test.c
 }
