@@ -2,23 +2,26 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <conio.h>
 
-#define PLUS 1000
-#define MINUS 1001
-#define MULTI 1002
-#define DIVIDE 1003
+#define PLUS 43
+#define MINUS 45
+#define MULTI 42
+#define DIVIDE 47
 
-#define stage 3
+//#define stage 2
 
+int stage;
+int result;
 int count = 0;
-int num_stage = stage + 1;
-int or_num_stage = stage + 1;
-int op_stage = stage;
-int or_op_stage = stage;
-int *array1 = (int*)malloc(num_stage * sizeof(int));
-int *array2 = (int*)malloc(op_stage * sizeof(int));
-int *or_array1 = (int*)malloc(num_stage * sizeof(int));
-int *or_array2 = (int*)malloc(op_stage * sizeof(int));
+int num_stage;
+int or_num_stage;
+int op_stage;
+int or_op_stage;
+int *array1;
+int *array2;
+int *or_array1;
+int *or_array2;
 
 int makeeq()
 {
@@ -29,7 +32,15 @@ int makeeq()
 	for (int i = 0; i < num_stage; i++)
 		array1[i] = rand() % 10 + 1;
 	for (int i = 0; i < op_stage; i++)
-		array2[i] = rand() % 4 + 1000;
+	{
+		int temp = rand() % 6 + 42;
+
+		if (temp == 44 || temp == 46)
+			i--;
+
+		else
+			array2[i] = temp;
+	}
 
 	for (int i = 0; i < num_stage; i++)
 		or_array1[i] = array1[i];
@@ -118,5 +129,6 @@ int makeeq()
 		}
 	}
 
-	return array1[0];
+	result = array1[0];
+	return result;
 }
