@@ -1,3 +1,14 @@
+#include <time.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include "game2.h"
+
+#define PLUS 43
+#define MINUS 45
+#define MULTI 42
+#define DIVIDE 47
+
 void game2()
 {
 	stage = 1;
