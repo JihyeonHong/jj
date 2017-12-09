@@ -3,6 +3,10 @@
 #include <stdio.h>
 #include <string.h>
 #include "game2.h"
+#include "init.h"
+#include "makeeq.h"
+#include "verify.h"
+#include "print.h"
 
 #define PLUS 43
 #define MINUS 45

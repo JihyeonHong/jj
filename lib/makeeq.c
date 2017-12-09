@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include <conio.h>
+#include "makeeq.h"
 
 #define PLUS 43
 #define MINUS 45
@@ -13,7 +13,7 @@
 
 int stage;
 int result;
-int count = 0;
+int count;
 int num_stage;
 int or_num_stage;
 int op_stage;

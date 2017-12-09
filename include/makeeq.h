@@ -8,7 +8,7 @@
 
 int stage;
 int result;
-int count = 0;
+int count;
 int num_stage;
 int or_num_stage;
 int op_stage;
@@ -18,6 +18,6 @@ int *array2;
 int *or_array1;
 int *or_array2;
 
-void makeeq();
+int makeeq();
 
 #endif

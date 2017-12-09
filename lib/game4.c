@@ -3,6 +3,11 @@
 #include <stdio.h>
 #include <string.h>
 #include "game4.h"
+#include "init.h"
+#include "makeeq.h"
+#include "verify.h"
+#include "print.h"
+#include "quickSort.h"
 
 #define PLUS 43
 #define MINUS 45

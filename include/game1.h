@@ -8,7 +8,7 @@
 
 int stage;
 int result;
-int count = 0;
+int count;
 int num_stage;
 int or_num_stage;
 int op_stage;

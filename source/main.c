@@ -1,3 +1,19 @@
+#include <time.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include "game4.h"
+#include "init.h"
+#include "makeeq.h"
+#include "verify.h"
+#include "print.h"
+#include "quickSort.h"
+
+#define PLUS 43
+#define MINUS 45
+#define MULTI 42
+#define DIVIDE 47
+
 int main()
 {
 	srand(time(NULL));
