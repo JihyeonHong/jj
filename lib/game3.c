@@ -4,10 +4,10 @@
 #include <string.h>
 #include "game3.h"
 
-#define PLUS 43
-#define MINUS 45
-#define MULTI 42
-#define DIVIDE 47
+#include "makeeq.h"
+#include "print.h"
+#include "verify.h"
+#include "init.h"
 
 void game3()
 {

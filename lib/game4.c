@@ -3,12 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "game4.h"
-
-#define PLUS 43
-#define MINUS 45
-#define MULTI 42
-#define DIVIDE 47
-
+#include "quickSort.h"
 void game4()
 {
 	int life = 3;

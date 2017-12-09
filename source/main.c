@@ -1,6 +1,10 @@
+#include <stdlib.h>
+#include <time.h>
+#include <stdio.h>
+#include "header.h"
 int main()
 {
-	srand(time(NULL));
+	srand(time(1));
 
 	char enter;
 	int gamenum;

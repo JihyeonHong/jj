@@ -1,5 +1,5 @@
-#ifndef GAME4_H
-#define GAME4_H
+#ifndef MAKEEQ_H
+#define MAKEEQ_H
 
 #define PLUS 43
 #define MINUS 45
@@ -8,7 +8,7 @@
 
 int stage;
 int result;
-int count = 0;
+int count;
 int num_stage;
 int or_num_stage;
 int op_stage;
@@ -18,6 +18,14 @@ int *array2;
 int *or_array1;
 int *or_array2;
 
+void game1();
+void game2();
+void game3();
 void game4();
+void init(int stage);
+void print(int game_num);
+int verify(int flag);
+void quickSort(int x[], int L, int R);
+int makeeq();
 
 #endif

@@ -2,26 +2,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include <conio.h>
+#include "makeeq.h"
 
 #define PLUS 43
 #define MINUS 45
 #define MULTI 42
 #define DIVIDE 47
 
-//#define stage 2
 
-int stage;
-int result;
-int count = 0;
-int num_stage;
-int or_num_stage;
-int op_stage;
-int or_op_stage;
-int *array1;
-int *array2;
-int *or_array1;
-int *or_array2;
 
 int makeeq()
 {

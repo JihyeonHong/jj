@@ -6,12 +6,11 @@
 #include <string.h>
 #include "game1.h"
 
+/*
 #define PLUS 43
 #define MINUS 45
 #define MULTI 42
 #define DIVIDE 47
-
-//#define stage 2
 
 int stage;
 int result;
@@ -24,7 +23,7 @@ int *array1;
 int *array2;
 int *or_array1;
 int *or_array2;
-
+*/
 void game1()
 {
 	int life = 3;
